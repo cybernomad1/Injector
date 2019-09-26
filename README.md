@@ -3,7 +3,7 @@
 Injects shellcode into memory, tries to bypass UAC, and automatically tries to escalate to system
 
 ## Credits
-This project is built upon the sholders of Giants:
+This project is built upon the shoulders of giants:
 
 @_RastaMouse -> Their work on TikiTorch and shell injection formed the groundwork for how the injector operates
 
