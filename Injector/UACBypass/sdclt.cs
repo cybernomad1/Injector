@@ -41,9 +41,9 @@ namespace Injector.UACBypass
                     // this case
                 }
                 else
-                {
+                { 
+                    //key.DeleteSubKey("DelegateExecute");
                     key.DeleteSubKey("");
-                    key.DeleteSubKey("DelegateExecute");
                 }
             }
         }
