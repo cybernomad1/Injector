@@ -55,6 +55,7 @@
     <Compile Include="Misc\Utilities.cs" />
     <Compile Include="ShellInject\GruntInjector.cs" />
     <Compile Include="UACBypass\sdclt.cs" />
+    <Compile Include="UACBypass\UACBypassController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

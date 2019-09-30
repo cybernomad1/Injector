@@ -14,7 +14,7 @@ namespace Injector.Execution
     /// <summary>
     /// Shell is a library for executing shell commands.
     /// </summary>
-    public class ShellComannd
+    public class ShellCommand
     {
         
         /// <summary>
