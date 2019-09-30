@@ -31,7 +31,7 @@ arguments:
 Step1: Download the relevant GruntStager binary from covenant
 Step2: Generate Payload
 ```
-python3 ShellcodeCreate.py -f GruntStager.exe -opayload.txt
+python3 ShellcodeCreate.py -f GruntStager.exe -o payload.txt
 ```
 
 Current donut implementation results in shellcode also bypassing AMSI
