@@ -34,6 +34,8 @@ Step2: Generate Payload
 python3 ShellcodeCreate.py -f GruntStager.exe -opayload.txt
 ```
 
+Current donut implementation results in shellcode also bypassing AMSI
+
 ## Injector.exe
 
 ```
